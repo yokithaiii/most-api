@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ContestLevel extends Model
 {
     use HasFactory;
+
+    public function participants()
+    {
+        return $this->hasMany(Participant::class);
+    }
 }
