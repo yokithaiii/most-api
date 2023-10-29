@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\ParticipantCreateController;
+use App\Http\Controllers\Api\ParticipantsController;
+use App\Http\Controllers\Api\UserLoginController;
+use App\Http\Controllers\Api\UserCreateController;
+use App\Http\Controllers\Api\UsersController;
+use App\Http\Controllers\Api\VoteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/user-create', UserCreateController::class);
+Route::post('/user-login', UserLoginController::class);
+Route::get('/get-clients', UsersController::class);
+
+Route::post('/create-participant', ParticipantCreateController::class);
+Route::get('/get-participant', ParticipantsController::class);
+
+Route::middleware('auth:sanctum')->post('/vote', VoteController::class);
