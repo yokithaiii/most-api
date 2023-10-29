@@ -32,6 +32,12 @@ $contestLevel = ContestLevel::where('contest_start_date', '<=', now())
 ->first();
 `
 
+# Postman
+
+Коллекция запросов Postman: 
+
+    https://api.postman.com/collections/20288658-690973ea-2ac0-4c2a-9af9-840d9c8a93cc?access_key=PMAT-01HDXMRJMJCC0TT2X9RM41DYD0
+
 
 # Установка
 
