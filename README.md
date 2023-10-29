@@ -21,21 +21,21 @@
 - установить зависимости:
     
 
-    composer install 
+      composer install 
 
 - Сгенерировать ключ проекта
 
 
-    php artisan key:generate
+      php artisan key:generate
 
 - Запустить миграцию с фабрикой создания этапов голосования
 
     
-    php artisan migrate --seed
+      php artisan migrate --seed
 
 - Запустить проект
 
 
-    php artisan serve
+      php artisan serve
 
 - Не забудьте создать .env файл
