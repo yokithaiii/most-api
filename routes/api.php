@@ -20,11 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// user
 Route::post('/user-create', UserCreateController::class);
 Route::post('/user-login', UserLoginController::class);
 Route::get('/get-clients', UsersController::class);
 
+// participant
 Route::post('/create-participant', ParticipantCreateController::class);
 Route::get('/get-participant', ParticipantsController::class);
 
+// voting
 Route::middleware('auth:sanctum')->post('/vote', VoteController::class);

@@ -16,7 +16,7 @@ class VoteAction
             ->first();
 
         if (!$contestLevel) {
-            return response([
+            return response()->json([
                 'message' => 'Голосование закрыто.',
             ], 400);
         }
@@ -29,7 +29,7 @@ class VoteAction
                 ->first();
 
             if ($existingVote) {
-                return response([
+                return response()->json([
                     'message' => 'В первом этапе можно голосовать только один раз!',
                 ], 400);
             }
@@ -42,7 +42,7 @@ class VoteAction
                 ->count();
 
             if ($existingVotesCount >= 3) {
-                return response([
+                return response()->json([
                     'message' => 'Вы исчерпали лимит голосов во втором этапе.',
                 ], 400);
             }
@@ -53,7 +53,7 @@ class VoteAction
                 ->exists();
 
             if ($hasVotedForParticipant) {
-                return response([
+                return response()->json([
                     'message' => 'Вы уже проголосовали за этого участника.',
                 ], 400);
             }
@@ -65,7 +65,7 @@ class VoteAction
             'contest_level_id' => $contestLevelId,
         ]);
 
-        return response([
+        return response()->json([
             'message' => 'Ваш голос отправлен!',
             'data' => $vote,
         ], 200);

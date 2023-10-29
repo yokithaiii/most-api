@@ -14,7 +14,7 @@ class UserCreateController extends Controller
 
         $user = User::create($data);
 
-        return response([
+        return response()->json([
             'message' => 'Новый пользователь создан.',
             'data' => $user
         ], 201);

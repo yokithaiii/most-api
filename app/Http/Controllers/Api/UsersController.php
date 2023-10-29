@@ -12,8 +12,7 @@ class UsersController extends Controller
     {
         $users = UsersResource::collection(User::all());
 
-        return response([
-            'message' => 'OK',
+        return response()->json([
             'data' => $users
         ], 200);
     }

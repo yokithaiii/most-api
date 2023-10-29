@@ -15,7 +15,7 @@ class UserLoginController extends Controller
         if (auth()->attempt($data)) {
             $user = auth()->user();
             $token = $user->createToken('api_token')->plainTextToken;
-            return response([
+            return response()->json([
                 'message' => 'Вы успешно авторизовались!',
                 'token' => $token,
                 'token_type' => 'Bearer'

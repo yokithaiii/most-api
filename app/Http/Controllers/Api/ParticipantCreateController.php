@@ -15,7 +15,7 @@ class ParticipantCreateController extends Controller
 
         $user = Participant::updateOrCreate($data);
 
-        return response([
+        return response()->json([
             'message' => 'Новый участник создан.',
             'data' => $user,
         ], 201);
